@@ -4,20 +4,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
+}
+
+.image-container{
+  width: 400px;
+
+  position: relative;
+  object-fit: contain;
 }
 
 .item {
   width: 400px;
+  display: none;
 }
 
 .item > img {
   width: 100%;
 }
 
-.hidden{
-  display: none;
-}
 
 .active{
   display: block;
+}
+
+.button-box{
+  position: absolute;
+}
+
+.up{
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+}
+
+.down{
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%);
 }

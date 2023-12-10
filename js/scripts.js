@@ -22,6 +22,8 @@
 // 2. Scriviamo sempre prima per punti il nostro algoritmo in italiano per capire cosa vogliamo fare
 // 3. Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 
+
+
 const imgList = [
   "./img/01.webp",
   "./img/02.webp",
@@ -33,18 +35,59 @@ const imgList = [
 let card = document.getElementById("container");
 console.log("Card", card, typeof card);
 let elImg = "";
-for (let i = 0; i < imgList.length; i++) {
-  if (i == 0) {
-    elImg += `
-    <div class="item active">
-        <img src="${imgList[i]}"> 
-    </div>`;
-  } else {
-    elImg += `
-  <div class="item hidden">
-    <img src="${imgList[i]}"> 
-  </div>`;
-  }
-}
 
-card.innerHTML = elImg;
+ for (let i = 0; i < imgList.length; i++) {
+   if (i == 0) {
+     elImg += `
+     <div id="item-${[i]}" class="item active">
+         <img src="${imgList[i]}"> 
+     </div>`;
+   } else {
+     elImg += `
+   <div id="item-${[i]}" class="item">
+     <img src="${imgList[i]}"> 
+   </div>`;
+   }
+ }
+ card.innerHTML += elImg;
+
+
+
+
+let counter = 0
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+
+console.log(next)
+
+
+
+next.addEventListener("click", function(){
+  
+  let currentCounter = 'item-'+ counter;
+  let item = document.getElementById(currentCounter);
+  item.classList.remove('active')
+  
+  counter++
+  
+  let nextCount = 'item-' + counter
+  item = document.getElementById(nextCount);
+  item.classList.add('active')
+ })
+  
+
+
+
+
+prev.addEventListener("click", function () {
+  let currentCounter = "item-" + counter;
+
+  let item = document.getElementById(currentCounter);
+  item.classList.remove("active");
+
+  counter--;
+
+  let nextCount = "item-" + counter;
+  item = document.getElementById(nextCount);
+  item.classList.add("active");
+});
