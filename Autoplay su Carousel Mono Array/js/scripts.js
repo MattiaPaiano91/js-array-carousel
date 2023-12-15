@@ -40,7 +40,7 @@ let elImg = "";
 
 
 
-
+ 
 let counter = 0
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
