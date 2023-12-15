@@ -20,7 +20,7 @@
   display: none;
   margin: 0 auto;
   
-}
+} 
 
 .item > img {
   width: 100%;
@@ -28,7 +28,7 @@
   object-fit: contain;
   margin: 0 auto;
 }
-  
+    
 
 .active{
   display: block;
