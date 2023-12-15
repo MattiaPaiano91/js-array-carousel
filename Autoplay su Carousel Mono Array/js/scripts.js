@@ -60,7 +60,7 @@ console.log('id intervallo' + interval)
    let currentCounter = "item-" + counter;
    let item = document.getElementById(currentCounter);
    item.classList.remove("active");
-
+ 
    counter++;
    if (counter == 5) {
      counter = 0;
